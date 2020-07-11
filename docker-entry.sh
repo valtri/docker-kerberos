@@ -35,7 +35,7 @@ create_principal() {
 		kadmin.local -r $REALM -q "ank -randkey $user@$REALM"
 	fi
 	if [ -n "$DESTDIR" ]; then
-		kadmin.local -r $REALM -q "ktadd -k $DESTDIR/$f $user@$REALM"
+		kadmin.local -r $REALM -q "ktadd -norandkey -k $DESTDIR/$f $user@$REALM"
 	fi
 }
 
