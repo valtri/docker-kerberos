@@ -10,7 +10,8 @@ ENV MASTER_KEY ''
 ENV REALM 'EXAMPLE.COM'
 ENV PRINCIPALS ''
 
-EXPOSE 88 464 749
+EXPOSE 88/tcp 464/tcp 749/tcp
+EXPOSE 88/udp 464/udp 750/udp
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends krb5-admin-server krb5-kdc \
