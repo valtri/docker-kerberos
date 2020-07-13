@@ -19,5 +19,5 @@ RUN apt-get update \
 
 COPY docker-entry.sh /
 CMD /docker-entry.sh /bin/bash -l
-HEALTHCHECK \
+HEALTHCHECK --interval=10s --start-period=30s --retries=3 \
   CMD service krb5-kdc status && service krb5-admin-server status || exit 1
