@@ -68,4 +68,8 @@ unset ADMIN_KEY
 service krb5-admin-server start
 service krb5-kdc start
 
-exec "$@"
+if [ -z "$1" ]; then
+	tail -f /dev/null
+else
+	exec "$@"
+fi
